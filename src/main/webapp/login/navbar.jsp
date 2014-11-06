@@ -1,24 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script>
-$(function(){
-    $("#logoutLink").confirm({
-        text: "确定要退出么？",
-        title: "确认",
-        confirm: function(button){
-            alert("confirm");
-        },
-        cancel: function(button){
-            alert("cancel");
-        },
-        confirmButton: "退出",
-        cancelButton: "取消",
-        post: true
-    });
-});
-</script>
-
 <div class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -82,21 +64,34 @@ $(function(){
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">登录</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">确定</button>
-      </div>
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">登录</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-3 control-label">用户名:</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="username" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">密码:</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="password" placeholder="Password" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="login-confirm">确定</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- Sign Modal -->

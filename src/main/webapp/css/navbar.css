@@ -1,0 +1,4 @@
+@CHARSET "UTF-8";
+#loginModal>div.modal-dialog{
+    width: 400px;
+}

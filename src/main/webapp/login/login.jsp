@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Login</title>
-<jsp:include page="baseSource.jsp"></jsp:include>
-<script src="js/lib/jquery.confirm.js"></script>
+<jsp:include page="../head/baseSource.jsp"></jsp:include>
+<jsp:include page="../head/navbar.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="navbar.jsp"></jsp:include>

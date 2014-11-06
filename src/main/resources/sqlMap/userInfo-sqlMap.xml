@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tinyIdea.DAO.UserDAO">
+    <resultMap type="com.tinyIdea.util.UserInfo" id="userMap" autoMapping="true">
+        <id property="id" column="ID" />
+        <result property="username" column="USERNAME" />
+        <result property="password" column="PASSWORD" />
+        <result property="isDeleted" column="IS_DELETED"/>
+        <result property="gmtCreate" column="GMT_CREATE"/>
+    </resultMap>
+    
+    <insert id="insert" parameterType="com.tinyIdea.util.UserInfo">
+        INSERT INTO USERS (USERNAME, PASSWORD) VALUES (#{username}, #{password});
+    </insert>
+</mapper> 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration  
+  PUBLIC "-//mybatis.org//DTDConfig 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>
+    <typeAliases>  
+        <typeAlias alias="UserDAO" type="com.tinyIdea.DAO.UserDAO"/>  
+    </typeAliases>  
+    <mappers>
+        <mapper resource="sqlMap/userInfo-sqlMap.xml"></mapper>
+    </mappers>
+</configuration>
