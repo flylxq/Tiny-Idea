@@ -23,3 +23,86 @@ button.transparent:hover {
     background-color: rgba(200, 200, 0, 0.5);
     color: white;
 }
+
+/**旋转立方体*/
+#wrap {
+    perspective:800px;
+    perspective-origin: 50% 100px;
+    -webkit-perspective:800px;
+    -webkit-perspective-origin: 50% 100px;
+    height: 400px;
+}
+#cube {
+    position: relative;
+    left: 100px;
+    width: 180px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#cube div {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+#back {
+    -webkit-transform: translateZ(-100px) rotateY(180deg);
+    transform: translateZ(-100px) rotateY(180deg);
+}
+#right {
+	-webkit-transform: rotateY(-90deg) translateX(100px);
+	-webkit-transform-origin: top right;
+	transform: rotateY(90deg) translateX(100px);
+	transform-origin: top right;
+}
+#left {
+	-webkit-transform: rotateY(270deg) translateX(-100px);
+	-webkit-transform-origin: center left;
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+#top {
+	-webkit-transform: rotateX(-90deg) translateY(-100px);
+	-webkit-transform-origin: top center;
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+#bottom {
+	-webkit-transform: rotateX(90deg) translateY(100px);
+	transform: rotateX(90deg) translateY(100px);
+	-webkit-transform-origin: bottom center;
+}
+#front {
+	-webkit-transform: translateZ(100px);
+	transform: translateZ(100px);
+}
+
+@-webkit-keyframes spin {
+	from { 
+	    -webkit-transform: rotateY(0); 
+	}
+	to { 
+	    -webkit-transform: rotateY(360deg); 
+	}
+}
+@keyframes spin {
+	from { 
+	    -webkit-transform: rotateY(0); 
+	}
+	to { 
+	    -webkit-transform: rotateY(360deg); 
+	}
+}
+
+/* #cube {
+    -webkit-animation: spin 5s infinite linear;
+	animation: spin 5s infinite linear;
+} */
+
+/** test */
+#testDiv {
+    width: 400px;
+    height: 200px;
+    background: linear-gradient(to right bottom, rgba(50, 50, 50, .7) 0%, rgba(150, 150, 150, .5) 30%, rgba(150, 150, 150, .5) 70%, rgba(50, 50, 50, .7) 100%);
+}
