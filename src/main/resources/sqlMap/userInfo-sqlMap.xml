@@ -9,7 +9,48 @@
         <result property="gmtCreate" column="GMT_CREATE"/>
     </resultMap>
     
-    <insert id="insert" parameterType="com.tinyIdea.util.UserInfo">
-        INSERT INTO USERS (USERNAME, PASSWORD) VALUES (#{username}, #{password});
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.tinyIdea.util.UserInfo">
+        <![CDATA[INSERT INTO USERS (USERNAME, PASSWORD) VALUES (#{username}, #{password});]]>
     </insert>
+    
+    <update id="update" parameterType="com.tinyIdea.util.UserInfo">
+        <![CDATA[UPDATE USERS SET ]]>
+            <if test="username != null">
+                <![CDATA[USERNAME = '#{username}']]>
+            </if>
+            <if test="password != null">
+                 <![CDATA[AND PASSWORD = '#{password}']]>
+            </if>
+            <![CDATA[WHERE ID = ${id}]]>
+        
+    </update>
+    
+    <update id="delete" parameterType="com.tinyIdea.util.UserInfo">
+        <![CDATA[
+            UPDATE USERS SET
+                IS_DELETED = 1
+                WHERE ID = ${id}
+        ]]>
+    </update>
+    
+    <select id="selectById" parameterType="Long" resultMap="userMap">
+        <![CDATA[
+            SELECT ID, USERNAME, PASSWORD, IS_DELETED, GMT_CREATE
+                FROM USERS
+                WHERE ID = ${id}
+        ]]>
+    </select>
+    
+    <select id="getUserId" parameterType="com.tinyIdea.util.UserInfo" resultMap="userMap">
+        <![CDATA[
+            SELECT ID, USERNAME, PASSWORD, IS_DELETED, GMT_CREATE
+                FROM USERS
+                WHERE USERNAME = '${username}'
+         ]]>
+            <if test="password != null">
+                <![CDATA[ AND PASSWORD = '${password}']]>
+            </if>
+            LIMIT 1
+        
+    </select>
 </mapper> 

@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+body {
+    position: relative;
+    height: auto;
+    min-height:100%;
+    
+    padding-bottom: 130px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(250, 250, 250, .5);
+    height: 130px;
+    width: 100%;
+    border-top: 1px solid rgba(50, 50, 50, .5);
+}
+#concerned-links {
+    height:110px;
+}
+
+#webapp-infos {
+    height: 20px;
+    border-top: 1px solid rgba(50, 50, 50, .5);
+    text-align: center;
+    padding-top: 2px;
+}
+#webapp-infos>p.text-muted {
+    padding-bottom: 0;
+    margin-bottom: 0;

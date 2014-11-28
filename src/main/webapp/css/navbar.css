@@ -1,4 +1,33 @@
 @CHARSET "UTF-8";
-#loginModal>div.modal-dialog{
-    width: 400px;
+div.navbar {
+    margin-bottom:10px;
+}
+#loginModal>div.modal-dialog, #signModal>div.modal-dialog{
+    width: 500px;
+}
+#loginModal>div.modal-dialog>div.modal-content>div.modal-header, 
+#loginModal>div.modal-dialog>div.modal-content>div.modal-footer,
+#signModal>div.modal-dialog>div.modal-content>div.modal-header, 
+#signModal>div.modal-dialog>div.modal-content>div.modal-footer{
+    text-align:center;
+}
+#loginModal>div.modal-dialog>div.modal-content>div.modal-footer,
+#signModal>div.modal-dialog>div.modal-content>div.modal-footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#loginModal>div.modal-dialog>div.modal-content>div.modal-footer>button.btn,
+#signModal>div.modal-dialog>div.modal-content>div.modal-footer>button.btn {
+    width: 100px;
+    height: 38px;
+}
+
+#login-danger-alert {
+    margin-bottom: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right:25%;
+    width: 98%;
 }

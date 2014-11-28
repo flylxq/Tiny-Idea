@@ -1,7 +1,19 @@
 @CHARSET "UTF-8";
+html {
+    height:100%;
+}
 body{
     font-family:微软雅黑, Times New Roman;
     font-size:15px;
     margin: 0px;
     padding: 0px;
+}
+#main-container {
+    height: auto;
+    min-height: 500px;
+    border: 1px solid rgba(50, 50, 50, .5);
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, .7);
+    border-radius: 5px;
+    padding-left: 0;
+    padding-right: 0;
 }
